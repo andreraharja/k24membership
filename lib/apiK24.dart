@@ -29,3 +29,10 @@ Future<List<MembershipK24>> getMembershipK24({required Map body}) async {
       .toList();
   return listMember;
 }
+
+Future<String> addMembershipK24({required Map body}) async {
+  var url = 'https://api-membership.k24.co.id:3121/member/add';
+  http.Response response = await http.post(Uri.parse(url), body: body);
+  final jsonData = json.decode(response.body);
+  return jsonData['status'];
+}
