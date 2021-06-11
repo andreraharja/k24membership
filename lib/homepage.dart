@@ -60,7 +60,7 @@ class _HomePageState extends State<HomePage> {
                     );
                   }),
             ),
-            user == 'admin1'
+            user == 'Admin Satu'
                 ? Container(
                     width: SizeConfig.safeBlockHorizontal! * 95,
                     child: ElevatedButton(
@@ -70,7 +70,9 @@ class _HomePageState extends State<HomePage> {
                               .push(MaterialPageRoute(builder: (_) {
                             return AddMembership();
                           }));
-                          if(result=='Success'){
+                          if(result=='success'){
+                            ldMember = await getMembershipK24(
+                                body: {"partnerID": partnerID, "partnerCode": partnerCode});
                             setState(() {
 
                             });

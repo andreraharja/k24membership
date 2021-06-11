@@ -46,10 +46,11 @@ class _AddMembershipState extends State<AddMembership> {
                     String resultAdd = await addMembershipK24(body: {
                       "partnerID": partnerID,
                       "partnerCode": partnerCode,
-                      "name": fieldName,
-                      "dateOfBirth": fieldBirth
+                      "name": fieldName.text,
+                      "dateOfBirth": fieldBirth.text
                     });
-                    if(resultAdd=="Success"){
+                    print(resultAdd);
+                    if(resultAdd=="success"){
                       Navigator.pop(context, resultAdd);
                     }
                   },
